@@ -1,0 +1,20 @@
+.post {
+    margin-bottom: 70px;
+    width: 650px;
+    min-height: 560px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.post__name {
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.post__descr {
+    padding: 0 20px;
+    margin: 0px 0 20px 0;
+}
