@@ -6,7 +6,7 @@ import Avatar from '../Avatar'
 
 import './User.css'
 
-const User = ({ className, min, src, name,  }) => {
+const User = ({ className, min, src, name }) => {
 
     const classes = classNames(
         className,
@@ -19,11 +19,11 @@ const User = ({ className, min, src, name,  }) => {
             className = {classes}
         >
             <Avatar 
-                min={min} 
                 src={src} 
                 className="user__avatar" 
+                min={min}
             />
-            <div className="user__name">
+            <div>
                {name}
             </div>
         </a>
@@ -33,11 +33,15 @@ const User = ({ className, min, src, name,  }) => {
 User.propTypes = {
     className: PropTypes.string,
     min: PropTypes.bool,
+    src: PropTypes.string,
+    name: PropTypes.string
 }
 
 User.defaultProps = {
     className: 'user',
-    min: false
+    min: false,
+    name: '',
+    src: ''
 }
 
 

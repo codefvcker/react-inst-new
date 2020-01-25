@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import Image from '../Image'
@@ -10,7 +9,7 @@ const Avatar = ({className, src, alt, min, ...props }) => {
 
     const classes = classNames(
         className,
-        {min}
+        { min }
     )
 
     return (

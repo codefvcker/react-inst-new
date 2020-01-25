@@ -1,13 +1,12 @@
 import React from 'react'
 import classNames from 'classnames'
-import PropTypes from 'prop-types'
 
 import User from '../User'
 import Image from '../Image'
 
 import './Post.css'
 
-const Post = ({ name, src, className, ...props}) => {
+const Post = ({ name, descr, src, photo, className }) => {
 
     const classes = classNames(
         className
@@ -16,13 +15,13 @@ const Post = ({ name, src, className, ...props}) => {
     return (
         <div className={classes}>
             <User 
-                min 
                 name={name} 
-                src={src}
+                src={photo}
+                min
             />
-            <Image className="post__image" />
-            <div className="post__name">Name</div>
-            <div className="post__descr">Description</div>
+            <Image src={src} className="post__image" />
+            <div className="post__name">{name}</div>
+            <div className="post__descr">{descr}</div>
         </div>
     )
 }

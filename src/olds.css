@@ -54,7 +54,7 @@ header* {
     text-decoration: none;
 }
 
-.feed {
+.feed* {
     display: flex;
     justify-content: space-around;
     margin-top: 70px;
@@ -74,7 +74,7 @@ header* {
     border-radius: 4px;
 }
 
-.post .user {
+.post .user* {
     margin: 12px 12px;
 }
 
