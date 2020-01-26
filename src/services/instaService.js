@@ -20,12 +20,12 @@ export default class InstaService {
     }
 
     getAllPhotos = async () => {
-        const response = await this.getResourse('posts.json')
+        const response = await this.getResource('posts.json')
         return response.map(this._transformDataToPhotos)
     }
 
     getAllUsers = async () => {
-        const response = this.getResourse('posts.json')
+        const response = await this.getResource('posts.json')
         return response.map(this._transformDataToUsers)
     }
 

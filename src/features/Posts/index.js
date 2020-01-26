@@ -2,12 +2,15 @@ import React, { Component } from 'react'
 import InstaService from '../../services/instaService'
 
 import Post from '../../components/Post'
+import Loader from '../../components/Loader'
+import ErrorMessage from '../../components/ErrorMessage'
 
 import './Posts.css'
 
 export default class Posts extends Component {
 
     state={
+        loading: true,
         error: false,
         posts: []
     }
@@ -26,6 +29,7 @@ export default class Posts extends Component {
 
     onDataLoaded = (posts) => {
         this.setState({
+            loading: false,
             error: false,
             posts
         })
@@ -53,11 +57,11 @@ export default class Posts extends Component {
     }
 
     render() {
-        const { error, posts } = this.state;
+        const { error, posts, loading } = this.state;
         const items = this.renderPosts(posts)
         return (
             <div className="posts">
-                {error ? 'Error' : items}
+                {loading ? <Loader /> : error ? <ErrorMessage /> : items}
             </div>
         )
     }

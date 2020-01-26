@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-import User from '../User'
 import InstaService from '../../services/instaService'
+
+import ErrorMessage from '../ErrorMessage'
+import User from '../User'
+import Loader from '../Loader'
 
 import './Suggestion.css'
 
 export default class Suggestion extends Component {
 
     state = {
+        loading: true,
         error: false,
         users: []
     }
@@ -26,6 +30,7 @@ export default class Suggestion extends Component {
     onUsersLoaded = (users) => {
         this.setState({
             error: false,
+            loading: false,
             users
         })
     }
@@ -53,7 +58,7 @@ export default class Suggestion extends Component {
     }
 
     render() {
-        const {error, users} = this.state
+        const {error, users, loading} = this.state
         const items = this.usersRender(users)
 
         return (
@@ -64,7 +69,7 @@ export default class Suggestion extends Component {
                 </div>
                 <div className="suggestion__list">
                     <ul>
-                        {items}
+                        {loading ? <Loader /> : error ? <ErrorMessage /> : items}
                     </ul>
                 </div>
             </div>

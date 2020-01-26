@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../../logo.svg'
-// import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 import Image from '../../components/Image'
 
@@ -10,16 +10,29 @@ const Header = () => {
     return (
             <header>
                 <div className="container header_wrap">
-                        <a href="#" className="header__logo_wrap">
+                        <Link to='/' className="header__logo_wrap">
                             <Image src={logo} alt="logo" className='header__logo' />
-                        </a>
+                        </Link>
                     <nav className="navigation">
                         <ul>
-                            <li>Feed</li>
-                            <li>Profile</li>
+                            <li>
+                                <NavLink
+                                    exact
+                                    to='/'
+                                    className="navigation__link"
+                                >
+                                    Feed
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to='/profile'
+                                    className="navigation__link"
+                                >
+                                    Profile
+                                </NavLink>
+                            </li>
                         </ul>
-                        {/* <NavLink to='/feed' >Feed</NavLink>
-                        <NavLink to='/profile' >Profile</NavLink> */}
                     </nav>
                 </div>
             </header>

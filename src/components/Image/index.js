@@ -26,12 +26,14 @@ Image.propTypes = {
     src: PropTypes.string,
     alt: PropTypes.string,
     className: PropTypes.string,
+    circle: PropTypes.bool
 }
 
 Image.defaultProps = {
     src: 'https://s28943.pcdn.co/wp-content/uploads/2019/09/placeholder.jpg',
     alt: 'Image name',
-    className: ''
+    className: '',
+    circle: false
 }
 
 export default Image;

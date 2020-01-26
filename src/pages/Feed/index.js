@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Posts from '../../features/Posts'
 import Side from '../../features/Side'
 
