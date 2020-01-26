@@ -140,7 +140,7 @@ header* {
     font-weight: 400;
 }
 
-.users__block {
+.users__block* {
     margin-top: 20px;
     padding: 20px;
     width: 265px;
